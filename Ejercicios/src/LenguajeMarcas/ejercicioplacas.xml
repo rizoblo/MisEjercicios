@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE placasbase SYSTEM "placasbase.dtd"> 
+
+
+<placasbase>
+
+  <placaAsus>
+  
+  <microprocesador>Pepe el del girasol</microprocesador>
+  <memoria>juanito</memoria>
+  <modelo>juan</modelo>
+  <fabricante><Asus/></fabricante>
+  
+  </placaAsus>
+  
+  <placaIntel>
+  
+  <microprocesador>Pepe el del girasoles</microprocesador>
+  <memoria>juanitos</memoria>
+  <modelo>juanes</modelo>  
+  <fabricante><Intel/></fabricante>
+  
+  </placaIntel>
+ </placasbase>
+ 
+  
+  	
+ 
