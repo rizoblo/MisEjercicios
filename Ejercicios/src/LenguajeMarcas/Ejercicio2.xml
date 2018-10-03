@@ -7,10 +7,10 @@
 
   <email>
   
-  <para>Pepe el del girasol</para><!ELEMENT nombre (#PCDATA)>
-  <cc>juanito</cc>
-  <cco>juan</cco>
-  <asunto><Asus/></asunto>
+  <para></para>
+  <cc></cc>
+  <cco></cco>
+  <asunto>ñaldsfjñalsdjf </asunto>
   <texto></texto>
   <adjunto>
   
