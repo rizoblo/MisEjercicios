@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiendas SYSTEM "NewFile.dtd">
+
+<tiendas>
+
+	<franquicias>
+			<camisetas></camisetas>
+		
+			<pantalones>
+				<pitillo >JEJE</pitillo>
+			</pantalones>
+		
+			<zapatos>
+				<deportivas nombre="nike" tipo_color="rojo verde" >HOLA</deportivas>
+				<tenis tipo_color="verde">&calzado;</tenis>
+			</zapatos>
+			<sombreros  anchura="grande" nombre="armani" altura="alto" lista="estrecho" ></sombreros>
+	
+	</franquicias>
+
+	
+	<colores>
+	
+		<color nombre="rojo"></color>
+		<color nombre="verde"></color>
+		
+	</colores>
+	
+	
+</tiendas>

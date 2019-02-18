@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE emails SYSTEM "Ejercicio2.dtd">
+
+
+<emails>
+
+  <email>
+  
+  <para></para>
+  <cc></cc>
+  <cco></cco>
+  <asunto>ñaldsfjñalsdjf </asunto>
+  <texto></texto>
+  <adjunto>
+  
+  	<nombre></nombre>
+  	<mimetype></mimetype>
+  	<longitud></longitud>
+  	
+  </adjunto>	
+  </email>
+</emails>
+
+  
+  	

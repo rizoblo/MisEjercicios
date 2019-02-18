@@ -1,0 +1,32 @@
+
+
+<!ELEMENT provincias (provincia)>
+<!ELEMENT provincia (nombre,rentas,codigo,situacion)>
+<!ELEMENT nombre (poblacion+,clima?,renta*)>
+<!ELEMENT codigo EMPTY>
+<!ELEMENT poblacion (#PCDATA | mayoresedad | menoresedad)*>
+<!ELEMENT clima ANY>
+<!ELEMENT renta (rentapersonal)>
+<!ELEMENT rentas (primertipo,segundotipo)>
+<!ELEMENT mayoresedad (#PCDATA)>
+<!ELEMENT menoresedad (#PCDATA)>
+<!ELEMENT primertipo (#PCDATA)>
+<!ELEMENT segundotipo (#PCDATA)>
+<!ELEMENT rentapersonal ANY>
+<!ELEMENT situacion ANY>
+
+
+<!ENTITY % parametro "pais CDATA #REQUIRED">
+
+<!ATTLIST poblacion numero (grande | mediana | pequeña) #IMPLIED>
+<!ATTLIST clima calor CDATA #IMPLIED>
+<!ATTLIST clima frio CDATA #FIXED "si">
+<!ATTLIST clima %parametro; temple CDATA #REQUIRED>
+<!ATTLIST primertipo cantidad ID #IMPLIED>
+<!ATTLIST segundotipo cantidad ID #IMPLIED>
+<!ATTLIST renta tiporenta IDREF #IMPLIED>
+<!ATTLIST rentapersonal tiporenta IDREFS #IMPLIED>
+
+<!ENTITY lugar "cordoba">
+
+

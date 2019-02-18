@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE centro SYSTEM "NewFile1.dtd">
+
+<centro>
+
+
+	<jefes caracter="noguay">
+	
+		<nivel>&cualificacion;</nivel>
+	
+	
+	</jefes>
+	
+	<profesores>
+		
+		<asignatura>
+			<guardia></guardia>
+		</asignatura>
+		
+		<alumnos procedencia="albaricoque" nacionalidad="españa" edad="15" rellene_nombre="castellano aragones" ></alumnos>
+		<padre edad="45" rellene_nombre="castellano" rellene_apellido="catalan"></padre>
+	</profesores>
+	
+	<informacion>
+		<nombre nombre="castellano"></nombre>
+		<nombre nombre="aragones"></nombre>
+		<apellido apellido="catalan"></apellido>
+		
+	
+	</informacion>
+	
+</centro>	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+
+<xs:element name="rocket" type="tiporocket"/>
+
+
+<xs:complexType name="tiporocket">
+
+	<xs:sequence>
+	
+		<xs:element name="equipo" type="tipoequipo"/>
+		<xs:element name="coche" type="tipocoche"/>
+		<xs:element name="campo" type="tipocampo"/>
+		<xs:element name="ejercicio5" type="tipoejercicio5"/>
+		<xs:element name="ejercicio6" type="tipoejercicio6"/>
+		<xs:element name="ejercicio8" type="tipoejercicio8"/>
+		<xs:element name="ejercicio9" type="tipoejercicio9"/>
+		<xs:element name="ejercicio10" type="tipoejercicio10"/>
+		<xs:element name="ejercicio11" type="tipoejercicio11"/>
+		<xs:element name="ejercicio12" type="tipoejercicio12"/>
+		<xs:element name="ejercicio121" type="tipoejercicio121"/>
+		<xs:element name="ejercicio14" type="tipoejercicio14"/>
+		<xs:element name="ejercicio142" type="tipoejercicio142"/>
+		
+	</xs:sequence>
+
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipoequipo">
+
+	<xs:attribute name="nombre" type="xs:string"/>
+
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipocoche" mixed="true">
+
+	<xs:choice>
+		<xs:element name="charger" type="xs:string"/>
+	</xs:choice>
+	
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipocampo">
+
+	<xs:attribute name="porterias" type="xs:integer"/>
+	<xs:attribute name="nombre" type="xs:string"/>
+	
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipoejercicio5" mixed="true">
+
+	<xs:attribute name="uno" type="xs:string"/>
+	<xs:attribute name="dos" type="xs:string"/>
+	
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipoejercicio6" mixed="true">
+
+	<xs:simpleContent>
+	
+			<xs:extension base="xs:integer">
+			
+				<xs:attribute name="uno" type="xs:string" />
+				<xs:attribute name="dos" type="xs:string" />
+				
+			</xs:extension>
+			
+	</xs:simpleContent>
+	
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipoejercicio8">
+
+	<xs:attribute name="color">
+	
+		<xs:simpleType>
+		
+			<xs:restriction base="xs:string">
+			
+				<xs:enumeration value="rojo"/>
+				<xs:enumeration value="azul" />
+				
+			</xs:restriction>
+			
+		</xs:simpleType>
+			
+	</xs:attribute>
+	
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipoejercicio9">
+
+	<xs:attribute name="numeroruedas">
+	
+		<xs:simpleType>
+		
+			<xs:restriction base="xs:integer">
+			
+				<xs:minInclusive value="100"/>
+				<xs:maxInclusive value="1000"/>
+				
+			</xs:restriction>
+			
+		</xs:simpleType>
+			
+	</xs:attribute>
+	
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipoejercicio10">
+
+	<xs:attribute name="dni">
+	
+		<xs:simpleType>
+		
+			<xs:restriction base="xs:string">
+			
+				<xs:pattern value="[A-Z|a-z]{7}[0-9]{3}"/>
+				
+				
+			</xs:restriction>
+			
+		</xs:simpleType>
+			
+	</xs:attribute>
+	
+	<xs:attribute name="matricula">
+	
+		<xs:simpleType>
+		
+			<xs:restriction base="xs:string">
+			
+				<xs:pattern value="[A-Z]{3}\d{4}"/>
+				
+				
+			</xs:restriction>
+			
+		</xs:simpleType>
+			
+	</xs:attribute>
+	
+	<xs:attribute name="MAC">
+	
+		<xs:simpleType>
+		
+			<xs:restriction base="xs:string">
+			
+				<xs:pattern value="([0-9|A-F|a-f]{2}:){5}[0-9|A-F|a-f]{2}"/>
+				
+				
+			</xs:restriction>
+			
+		</xs:simpleType>
+			
+	</xs:attribute>
+	
+	<xs:attribute name="colores">
+	
+		<xs:simpleType>
+		
+			<xs:restriction base="xs:string">
+			
+				<xs:pattern value="(amarillo|blanco|rojo)"/>
+				
+				
+			</xs:restriction>
+			
+		</xs:simpleType>
+			
+	</xs:attribute>
+	
+</xs:complexType>
+
+<!--  -->
+
+<xs:simpleType name="tipoejercicio11">  
+	
+	<xs:union memberTypes="cochesflamas cochesnoflamas"/>
+	
+</xs:simpleType>
+
+
+
+<xs:simpleType name="cochesflamas">
+
+	<xs:restriction base="xs:string">
+	
+		<xs:enumeration value="flamisima"/>
+		<xs:enumeration value="bastante_flama"/>
+		<xs:enumeration value="flama"/>
+		<xs:enumeration value="flamillo"/>
+		
+	</xs:restriction>
+
+
+</xs:simpleType>
+
+<xs:simpleType name="cochesnoflamas">
+
+	<xs:restriction base="xs:string">
+	
+		<xs:enumeration value="horriblemente_flama"/>
+		<xs:enumeration value="poco_flama"/>
+		<xs:enumeration value="bueno_flama"/>
+		<xs:enumeration value="pasablemente_flama"/>
+		
+	</xs:restriction>
+
+
+</xs:simpleType>
+
+<!--  -->
+
+<xs:simpleType name="tipoejercicio12">
+
+	<xs:list itemType="listadevelocidad"></xs:list>
+
+</xs:simpleType>
+
+
+<xs:simpleType name="listadevelocidad">
+
+	<xs:restriction base="xs:string">
+	
+		<xs:enumeration value="rapido"/>
+		<xs:enumeration value="normal"/>
+		<xs:enumeration value="lento"/>
+		<xs:enumeration value="lentisimo"/>
+		
+	</xs:restriction>
+
+
+</xs:simpleType>
+
+<!--  -->
+
+
+<!--  -->
+
+<xs:complexType name="tipoejercicio121">
+
+	<xs:attribute name="altura" type="tipoaltura"/>
+	<xs:attribute name="alturacomun" type="tipoalturacomun"/>
+	
+</xs:complexType>
+
+
+
+<xs:simpleType name="tipoaltura">
+
+	<xs:restriction base="xs:string">
+	
+		<xs:enumeration value="alto"/>
+		<xs:enumeration value="normal"/>
+		<xs:enumeration value="bajo"/>
+		<xs:enumeration value="bajito"/>
+		
+	</xs:restriction>
+
+</xs:simpleType>
+
+<xs:simpleType name="tipoalturacomun">
+
+	<xs:restriction base="tipoaltura">
+	
+		<xs:enumeration value="normal"/>
+		
+		<xs:enumeration value="bajo"/>
+		
+	</xs:restriction>
+
+</xs:simpleType>
+
+<!--  -->
+
+<xs:complexType name="tipoejercicio14">
+
+	<xs:sequence>
+	
+		<xs:element name="componentes" type="xs:string"></xs:element>
+	
+	</xs:sequence>
+	
+	<xs:attribute name="llantas" type="xs:string"/>
+	<xs:attribute name="parabrisas" type="xs:string"/>
+	
+</xs:complexType>
+
+
+<xs:complexType name="tipoejercicio142">
+
+	<xs:complexContent>
+	
+		<xs:extension base="tipoejercicio14">
+		
+		<xs:sequence>
+		
+			<xs:element name="piezas" type="xs:string"/>
+		
+		</xs:sequence>
+		
+		<xs:attribute name="goma" type="xs:string"/>
+		
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,116 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="usuario" type="tipousuario"/>
+
+	
+<xs:complexType name="tipousuario">
+
+<xs:sequence>
+
+	<xs:element name="ultimaSesiones" type="tipoultimasSesiones"></xs:element>
+	<xs:element name="marcadores" type="tipomarcadores"></xs:element>
+	<xs:element name="mensajes" type="tipomensajes"></xs:element>
+	
+
+</xs:sequence>
+
+<xs:attribute name="id">
+
+	<xs:simpleType>
+	
+		<xs:restriction base="xs:string">
+		
+			<xs:pattern value="\w+@gmail.[com|es]"></xs:pattern>
+		
+		</xs:restriction>
+	
+	</xs:simpleType>
+
+</xs:attribute>
+
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipoultimasSesiones">
+
+	<xs:choice maxOccurs="unbounded">
+	
+		<xs:element name="sesion" type="tiposesion"/>
+		
+	</xs:choice>
+
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tiposesion" mixed="true">
+
+	<xs:sequence>
+
+		<xs:element name="dispositivo">
+		
+			
+			
+				<xs:attribute name="ip">
+					
+					<xs:simpleType>
+					
+						<xs:restriction>
+						
+						<xs:pattern value="\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}"></xs:pattern>
+						
+						</xs:restriction>
+					
+					</xs:simpleType>
+				
+				</xs:attribute>
+				
+				<xs:attribute name="navegador" type="xs:string"/>
+				
+				<xs:attribute name="NAT">
+				
+					<xs:simpleType>
+					
+						<xs:restriction>
+						
+							<xs:enumeration value="si"></xs:enumeration>
+							
+							<xs:enumeration value="no"></xs:enumeration>
+							
+						</xs:restriction>
+					
+					</xs:simpleType>
+				
+				</xs:attribute>
+				
+		</xs:element>
+		
+		
+	</xs:sequence>
+	
+	<xs:attribute name="fecha" type="xs:date"/>
+	
+	<xs:attribute name="hora" type="xs:time"/>
+
+
+	
+
+</xs:complexType>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</xs:schema>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="iqea.xsl" type="text/xsl"?>
+
+<iqea>
+    <titulo>Los mejores muebles de imitación</titulo>
+    <logo>http://webdidacticarafaelmunoz.appspot.com/lmsgi/ejercicios-cap5/examen/2016-enero/recursos/logo.gif</logo>
+    <menu-navegacion>
+        <elemento href="https://www.google.es/#q=inicio">Inicio</elemento>
+        <elemento href="https://www.google.es/#q=perfil">Mi perfil</elemento>
+        <elemento href="https://www.google.es/#q=pedidos">Mis pedidos</elemento>
+        <elemento href="https://www.google.es/#q=preferidos">Mis preferidos</elemento>
+        <elemento href="https://www.google.es/#q=desconectar">desconectar</elemento>
+    </menu-navegacion>
+    <imagenes>
+        <imagen id="muebles1">http://webdidacticarafaelmunoz.appspot.com/lmsgi/ejercicios-cap5/examen/2016-enero/recursos/muebles1.gif</imagen>
+        <imagen id="muebles2">http://webdidacticarafaelmunoz.appspot.com/lmsgi/ejercicios-cap5/examen/2016-enero/recursos/muebles2.gif</imagen>
+        <imagen id="food1">http://webdidacticarafaelmunoz.appspot.com/lmsgi/ejercicios-cap5/examen/2016-enero/recursos/food1.gif</imagen>
+        <imagen id="food2">http://webdidacticarafaelmunoz.appspot.com/lmsgi/ejercicios-cap5/examen/2016-enero/recursos/food2.gif</imagen>
+        <imagen id="food3">http://webdidacticarafaelmunoz.appspot.com/lmsgi/ejercicios-cap5/examen/2016-enero/recursos/food3.gif</imagen>
+    </imagenes>
+    <banners>
+        <!-- Cada banner tendrá una cuadrícula de 4x4 espacios.
+        Recuerda que puedes indicar la imagen de fondo de una tabla con el atributo
+        style="background: url('xxxxxxxxxxxx.gif') no-repeat;"    -->
+        <banner idImagen="muebles1">
+            <texto x="1" y="1">Armario GuardïenCösen<br/>269 €</texto>
+            <texto x="3" y="4">Butaca Descasïen<br/>79 €</texto>
+        </banner>
+        <banner idImagen="muebles2">
+            <texto x="4" y="1">Mesa GuardïenCösen<br/>109 €</texto>
+            <texto x="1" y="4">Vajilla Brilläntïen<br/>49 €</texto>
+        </banner>
+    </banners>
+    <restaurante>
+        <plato tipo="desayuno" idImagen="food1">1 €</plato>
+        <plato tipo="almuerzo" idImagen="food2">2 €</plato>
+        <plato tipo="cena" idImagen="food3">3 €</plato>
+    </restaurante>
+</iqea>

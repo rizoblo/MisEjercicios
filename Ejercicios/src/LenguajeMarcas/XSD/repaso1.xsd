@@ -1,0 +1,206 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="factura" type="tipofactura"></xs:element>
+
+
+
+<xs:complexType name="tipofactura">
+
+
+
+	<xs:sequence>
+	
+		<xs:element name="datos_empresa" type="tipoempresa"></xs:element>
+		<xs:element name="datos_cliente" type="tipocliente"></xs:element>
+		<xs:element name="datos_factura" type="tipofactura2"></xs:element>
+		
+	</xs:sequence>
+	
+	<xs:attribute name="n_fac">
+	
+			<xs:simpleType>
+		
+				<xs:restriction base="xs:string">
+			
+					<xs:pattern value="[A-z|a-z][0-9]{3}"></xs:pattern>
+			
+				</xs:restriction>
+		
+		
+			</xs:simpleType>
+	
+	</xs:attribute>
+
+</xs:complexType>
+
+
+<!--  -->
+
+<xs:complexType name="tipoempresa">
+
+	<xs:sequence>
+	
+		<xs:element name="nombre" type="xs:string"></xs:element>
+		<xs:element name="poblacion" type="tipopoblacion"></xs:element>
+		<xs:element name="provincia" type="xs:string"></xs:element>
+		<xs:element name="dir" type="xs:string"></xs:element>
+		<xs:element name="cif" type="xs:string"></xs:element>
+		<xs:element name="telefono" type="tipotlf"></xs:element>
+	
+	</xs:sequence>
+	
+	
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipopoblacion" mixed="true">
+
+	<xs:attribute name="cod_postal">
+	
+		<xs:simpleType>
+			
+			<xs:restriction base="xs:integer">
+			
+				<xs:pattern value="\d{5}"></xs:pattern>
+			
+			</xs:restriction>
+		
+		</xs:simpleType>
+	
+	</xs:attribute>
+
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipotlf"/>
+
+<!--  -->
+
+<xs:complexType name="tipocliente">
+
+	<xs:sequence>
+	
+		<xs:element name="nombre" type="xs:string"></xs:element>
+		<xs:element name="poblacion" type="tipopoblacion2"></xs:element>
+		<xs:element name="provincia" type="xs:string"></xs:element>
+		<xs:element name="dir_env" type="xs:string"></xs:element>
+		
+	
+	</xs:sequence>
+
+	<xs:attribute name="n_cli">
+	
+		<xs:simpleType>
+		
+			<xs:restriction base="xs:string">
+			
+				<xs:pattern value="\w{1}\d{3}"></xs:pattern>
+				
+			</xs:restriction>
+		
+		</xs:simpleType>
+			
+	</xs:attribute>
+	
+	
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipopoblacion2" mixed="true">
+
+	<xs:attribute name="cod_postal">
+	
+		<xs:simpleType>
+		
+			<xs:restriction base="xs:integer">
+			
+				<xs:pattern value="\d{5}"></xs:pattern>	
+						
+			</xs:restriction>
+			
+		</xs:simpleType>
+	
+	</xs:attribute>
+
+
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipofactura2">
+
+<xs:choice maxOccurs="unbounded">
+
+	<xs:element name="fecha" type="xs:string"></xs:element>
+	<xs:element name="linea" type="tipolinea"></xs:element>
+	<xs:element name="base" type="xs:double"></xs:element>
+	<xs:element name="cuota_iva" type="xs:double"></xs:element>
+	<xs:element name="total" type="xs:double"></xs:element>
+	
+</xs:choice>	
+
+	<xs:attribute name="n_ped" >
+	
+		<xs:simpleType>
+		
+			<xs:restriction base="xs:string">
+			
+			<xs:pattern value="\w\d{3}"></xs:pattern>
+			
+			</xs:restriction>
+		
+		</xs:simpleType>
+	
+	</xs:attribute>
+	
+	<xs:attribute name="iva" type="xs:integer"/>
+	
+	<xs:attribute name="f_pago" type="xs:string"/>
+	
+	<xs:attribute name="moneda" type="xs:string"/>
+	
+
+
+
+
+
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipolinea">
+
+	<xs:all>
+	
+		<xs:element name="ref" type="xs:string"></xs:element>
+		<xs:element name="desc" type="xs:string"></xs:element>
+		<xs:element name="cant" type="xs:integer"/>
+		<xs:element name="precio" type="xs:integer"></xs:element>
+		<xs:element name="importe" type="xs:double"></xs:element>
+		
+	</xs:all>
+
+
+
+</xs:complexType>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</xs:schema>

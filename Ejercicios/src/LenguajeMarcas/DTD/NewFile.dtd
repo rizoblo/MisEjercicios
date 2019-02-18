@@ -1,0 +1,28 @@
+<!ELEMENT tiendas (franquicias,colores)>
+<!ELEMENT colores (color*)>
+<!ELEMENT color (#PCDATA)>
+<!ELEMENT franquicias (camisetas,pantalones?,zapatos+,sombreros)*>
+<!ELEMENT camisetas EMPTY>
+<!ELEMENT pantalones (#PCDATA | vaqueros | pitillo)*>
+<!ELEMENT zapatos (deportivas, tenis)*>
+<!ELEMENT tenis ANY>
+<!ELEMENT deportivas ANY>
+<!ELEMENT sombreros (#PCDATA)>
+<!ELEMENT vaqueros (#PCDATA)>
+<!ELEMENT pitillo (#PCDATA)>
+<!ELEMENT cuerito (#PCDATA)>
+
+<!ENTITY % parametro "nombre CDATA #IMPLIED">
+
+<!ATTLIST sombreros  perfil CDATA #IMPLIED>
+<!ATTLIST sombreros anchura CDATA #FIXED "grande">
+<!ATTLIST sombreros %parametro; altura CDATA #REQUIRED>
+<!ATTLIST sombreros lista (alto | bajo | estrecho) #IMPLIED>
+<!ATTLIST zapatos color ID #IMPLIED>
+<!ATTLIST deportivas %parametro; tipo_color IDREFS #IMPLIED>
+<!ATTLIST tenis tipo_color IDREF #IMPLIED>
+<!ATTLIST color nombre ID #IMPLIED>
+
+<!ENTITY calzado "mocasines">
+
+

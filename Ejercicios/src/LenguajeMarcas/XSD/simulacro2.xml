@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<starwars xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="simulacro2.xsd">
+
+<galaxia constelacion="pulgarcito">
+
+ 573920
+
+
+</galaxia>
+
+<estrellamuerte>
+Las partes son:
+	<!--  <hangar></hangar> -->
+	<cañones calibre="grande" codigo="3">holita</cañones>
+	
+</estrellamuerte>
+
+<ejercicio8 color="gris"></ejercicio8>
+
+<precionave precio="600"></precionave>
+
+
+
+</starwars>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

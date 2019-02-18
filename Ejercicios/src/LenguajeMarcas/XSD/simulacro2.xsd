@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="starwars" type="tipostarwars"></xs:element>
+
+<xs:complexType name="tipostarwars">
+
+	<xs:sequence>
+		
+		<xs:element name="galaxia" type="tipogalaxia"/>
+		<xs:element name="estrellamuerte" type="tipoestrellamuerte"/>
+		<xs:element name="ejercicio8" type="tipoejercicio8"/>
+		<xs:element name="precionave" type="tipoprecionave"/>
+	</xs:sequence>
+
+</xs:complexType>
+
+
+<!--  -->
+
+<xs:complexType name="tipoestrellamuerte" mixed="true">
+
+	<xs:choice>
+		<xs:element name="hangar" type="xs:string"/>
+		<xs:element name="cañones" type="tipocañones"/>
+	</xs:choice>
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipocañones" mixed="true">
+
+	<xs:attribute name="calibre" type="xs:string"></xs:attribute>
+	<xs:attribute name="codigo" type="xs:integer"></xs:attribute>
+		
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipogalaxia" mixed="true">
+
+		
+		<xs:simpleContent>
+			<xs:extension base="xs:integer">
+				<xs:attribute name="constelacion" type="xs:string" />
+			</xs:extension>
+		</xs:simpleContent>
+		
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipoejercicio8">
+
+
+	<xs:attribute name="color">
+	
+		<xs:simpleType>
+		
+			<xs:restriction base="xs:string">
+			
+				<xs:enumeration value="gris"/>
+				<xs:enumeration value="negro"/>
+				<xs:enumeration value="fosforito"/>
+				
+			</xs:restriction>
+		
+		</xs:simpleType>
+		
+	</xs:attribute>
+
+</xs:complexType>
+
+<!--  -->
+
+<xs:complexType name="tipoprecionave">
+
+
+	<xs:attribute name="precio">
+
+		<xs:simpleType>
+		
+			<xs:restriction base="xs:integer">
+			
+				<xs:maxInclusive value="700"></xs:maxInclusive>
+				<xs:minInclusive value="500"></xs:minInclusive>
+			
+			</xs:restriction>
+		
+		
+		
+		</xs:simpleType>
+
+	</xs:attribute>
+
+
+
+
+</xs:complexType>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</xs:schema>

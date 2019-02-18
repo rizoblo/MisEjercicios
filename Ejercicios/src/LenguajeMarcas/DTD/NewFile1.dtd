@@ -1,0 +1,35 @@
+
+
+<!ELEMENT centro (jefes,profesores,informacion)>
+<!ELEMENT jefes (nivel?)>
+<!ELEMENT profesores (asignatura*,alumnos+,padre*)>
+<!ELEMENT nivel ANY>
+<!ELEMENT asignatura (#PCDATA | guardia)*>
+<!ELEMENT alumnos EMPTY>
+<!ELEMENT guardia ANY>
+<!ELEMENT informacion (nombre*,apellido*)>
+<!ELEMENT nombre ANY>
+<!ELEMENT apellido ANY>
+<!ELEMENT padre ANY>
+
+
+
+<!ENTITY % parametro "edad CDATA #IMPLIED">
+
+<!ATTLIST asignatura materia CDATA #IMPLIED>
+<!ATTLIST alumnos procedencia NMTOKENS #REQUIRED>
+<!ATTLIST alumnos nacionalidad NMTOKEN #FIXED "españa">
+<!ATTLIST nombre nombre ID #IMPLIED>
+<!ATTLIST apellido apellido ID #IMPLIED>
+
+<!ATTLIST padre rellene_apellido IDREF #IMPLIED>
+<!ATTLIST padre %parametro; rellene_nombre IDREF #IMPLIED>
+<!ATTLIST alumnos %parametro; rellene_nombre IDREFS #IMPLIED>
+
+<!ATTLIST jefes caracter (guay | noguay) #IMPLIED>
+
+<!ENTITY cualificacion "alto"> 
+
+
+
+

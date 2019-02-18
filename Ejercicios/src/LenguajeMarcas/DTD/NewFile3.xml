@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE peliculas SYSTEM "NewFile3.dtd">
+
+
+<pelicula>
+
+	<director nombre="paco" edad="39" nacionalidad="española" tipoprocedencia="filipino"></director>
+
+	<pais latino="no">
+		<europeo>&lugar;</europeo>
+	</pais>
+
+
+	<elenco>
+	
+		<protagonistas nombre="pepe" edad="57" tipoprocedencia="filipino churrumino"></protagonistas>
+	
+	
+		<secundarios experiencia="media"></secundarios>
+		
+		<cameos posibilidad="si"></cameos>
+	
+	</elenco>
+
+
+
+	<nombres>
+	
+		<nombre procedencia="filipino"></nombre>
+		<nombre procedencia="churrumino"></nombre>
+		
+	</nombres>
+
+
+</pelicula>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

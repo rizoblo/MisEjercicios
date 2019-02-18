@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rocket xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="simulacro1.xsd">
+
+
+	<equipo nombre="esp"></equipo>
+
+	<coche>
+		Hola
+		<charger/>
+	
+	</coche>
+
+	<campo porterias="2" nombre="bernabeu"></campo>
+
+	<ejercicio5 uno="hola" dos="holita">Hola</ejercicio5>
+
+	<ejercicio6 uno="hola" dos="holita">65</ejercicio6>
+	
+	<ejercicio8 color="rojo"></ejercicio8>
+	
+	<ejercicio9 numeroruedas="150"></ejercicio9>
+	
+	<ejercicio10 dni="ABCDEFG187" matricula="AHE3456" MAC="12:23:3A:2B:54:1B" colores="rojo"></ejercicio10>
+	
+	<ejercicio11>horriblemente_flama</ejercicio11>
+	
+	<ejercicio12>lentisimo</ejercicio12>
+	
+	<ejercicio121 altura="alto" alturacomun="bajo"></ejercicio121>
+	
+	<ejercicio14 llantas="guay" parabrisas="guayy">
+	
+		<componentes></componentes>
+	
+	</ejercicio14>
+	
+	<ejercicio142 goma="guay">
+	
+		<componentes></componentes>
+		<piezas></piezas>
+	
+	</ejercicio142>
+</rocket>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE provincias SYSTEM "NewFile2.dtd">
+
+
+<provincia>
+
+
+	<nombre>
+		<poblacion numero="pequeña">
+			<mayoresedad>18</mayoresedad>
+		</poblacion>
+		
+		<clima frio="si" calor="no" pais="españa" temple="no"></clima>
+		
+		<renta tiporenta="alta">
+			<rentapersonal tiporenta="baja alta"></rentapersonal>
+		
+		</renta>
+		
+	</nombre>
+	
+	<rentas>
+	
+		<primertipo cantidad="alta"></primertipo>
+		<segundotipo cantidad="baja"></segundotipo>
+	
+	</rentas>
+
+	<codigo></codigo>
+
+	<situacion>&lugar;</situacion>
+</provincia>
+

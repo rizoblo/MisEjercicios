@@ -1,0 +1,29 @@
+
+<!ELEMENT peliculas (pelicula)>
+<!ELEMENT pelicula (director,pais,elenco,nombres)>
+<!ELEMENT director EMPTY>
+<!ELEMENT pais (#PCDATA | americano | europeo)*>
+<!ELEMENT elenco (protagonistas*,secundarios+,cameos?)>
+<!ELEMENT protagonistas ANY>
+<!ELEMENT secundarios ANY>
+<!ELEMENT cameos (#PCDATA)>
+<!ELEMENT americano ANY>
+<!ELEMENT europeo ANY>
+<!ELEMENT nombres (nombre)*>
+<!ELEMENT nombre ANY>
+
+
+<!ENTITY % parametro "nombre CDATA #REQUIRED edad CDATA #REQUIRED">
+
+<!ATTLIST director %parametro; nacionalidad NMTOKEN #REQUIRED>
+<!ATTLIST cameos posibilidad CDATA #IMPLIED>
+<!ATTLIST pais latino NMTOKEN #FIXED "no">
+<!ATTLIST nombre procedencia ID #IMPLIED>
+<!ATTLIST nombre procedencia ID #IMPLIED>
+<!ATTLIST director tipoprocedencia IDREF #IMPLIED>
+<!ATTLIST protagonistas %parametro; tipoprocedencia IDREFS #IMPLIED>
+<!ATTLIST secundarios experiencia (alta | media | baja) #REQUIRED>
+
+
+
+<!ENTITY lugar "occidental">
