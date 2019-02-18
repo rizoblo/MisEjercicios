@@ -131,7 +131,6 @@
       			</xsl:otherwise>
       		</xsl:choose>
       		<xsl:value-of select="."></xsl:value-of>
-      	
       	</xsl:if>
       	</xsl:for-each>
       </td>
