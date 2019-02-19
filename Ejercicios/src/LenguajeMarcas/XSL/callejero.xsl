@@ -23,7 +23,7 @@
 
 
 				<table border="1" width="635px" height="500px">
-					<xsl:attribute name="style">background:url('http://www.webdidacticarafaelmunoz.appspot.com/lmsgi/image/callejero/callejero.png') no-repeat;"/></xsl:attribute>
+					<xsl:attribute name="style">background:url('http://www.webdidacticarafaelmunoz.appspot.com/lmsgi/image/callejero/callejero.png') no-repeat;</xsl:attribute>
 					<xsl:call-template name="bucleForFila">
 						<xsl:with-param name="i">1</xsl:with-param>
 					</xsl:call-template>
