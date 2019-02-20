@@ -1,4 +1,4 @@
-package tresenraya;
+package Programacion.tresenraya;
 
 import java.awt.Canvas;
 import java.awt.Color;
@@ -8,7 +8,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.awt.image.BufferedImage;
+import java.net.URL;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -81,8 +84,26 @@ public class Ventana extends Canvas {
 	/**
 	 * Sobrescribimos el m�todo "paint" que tienen todos los componentes gr�ficos en AWT-SWING
 	 */
+	
+	
+	public BufferedImage getImagen(String nombre) {
+		URL url=null;
+		try {
+			url = getClass().getResource("/Programacion/tresenraya/" + nombre);
+			return ImageIO.read(url);
+		} 
+		catch (Exception e) {
+			System.out.println("No se pudo cargar la imagen " + nombre +" de "+url);
+			System.out.println("El error fue : "+e.getClass().getName()+" "+e.getMessage());
+			System.exit(0);
+			return null;
+		}
+	}
 	@Override
 	public void paint(Graphics g) {
+		
+		g.drawImage(getImagen("tresen.jpg"), 0, 0, this);
+
 		for (Celda celda : celdas) {
 			celda.paint(g);
 		}

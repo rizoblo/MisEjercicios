@@ -18,7 +18,7 @@ public class Ladrillosguays extends Ladrillo {
 			if (contadorvidaladrillo==0) {
 			remove();
 			}
-			stage.getSoundCache().playSound("petardo.wav");
+			stage.getSoundCache().playSound("bazooca.wav");
 
 		}
 	}

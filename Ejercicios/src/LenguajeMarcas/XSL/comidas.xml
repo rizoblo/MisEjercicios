@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="comidas.xsl"?>
+<navidad>
+	<almuerzo>
+	  <primerplato>Patatas bravas</primerplato>
+	  <segundoplato>entrecot de ternera</segundoplato>
+	  <postre>Danonino</postre>
+	  <bebida>Licor de hierbas</bebida>
+	  <sobremesa>
+	  	<primeracopa>Vodka-Naranja</primeracopa>
+	  	<segundacopa>Dyc-Pepsi</segundacopa>
+	  	<terceracopa>Ginebra</terceracopa>
+	  </sobremesa>
+	</almuerzo>
+</navidad>

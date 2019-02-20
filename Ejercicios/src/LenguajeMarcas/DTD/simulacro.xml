@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sistemasolar [
+
+  <!ELEMENT sistemasolar (planetas*)>
+  <!ELEMENT planetas (tamaño+, belleza?, habitabilidad)*>
+  <!ELEMENT tamaño (grande | pequeño)>
+  <!ELEMENT grande (#PCDATA)>
+  <!ELEMENT pequeño (#PCDATA)>
+  <!ELEMENT belleza EMPTY>
+  <!ELEMENT posible (#PCDATA)>
+  <!ELEMENT habitabilidad (#PCDATA | posible )*>
+  
+  <!ATTLIST habitabilidad posibilidad CDATA #REQUIRED>
+  <!ATTLIST habitabilidad viabilidad CDATA #IMPLIED>
+  <!ATTLIST habitabilidad coste CDATA #FIXED "alto">
+  
+  
+]>
+  
+  
+  
+  <sistemasolar>
+  	<planetas>
+  		<tamaño>
+  			<grande>mucho</grande>
+  		</tamaño>
+  		<belleza></belleza>
+  		<habitabilidad posibilidad="si" coste="alto">
+  			<posible>si</posible>
+  			
+  		</habitabilidad>
+  	</planetas>
+  	
+  </sistemasolar>

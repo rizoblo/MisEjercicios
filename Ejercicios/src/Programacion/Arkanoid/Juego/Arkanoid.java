@@ -56,7 +56,7 @@ public class Arkanoid extends Canvas implements Stage {
 	Pelota pelota = new Pelota(this);
 	public Arkanoid() {
 
-		JFrame ventana = new JFrame("Invaders");
+		JFrame ventana = new JFrame("Arkanoid Vietnamita de Combate");
 		JPanel panel = (JPanel) ventana.getContentPane();
 		setBounds(0, 0, Stage.WIDTH, Stage.HEIGHT);
 		panel.setPreferredSize(new Dimension(Stage.WIDTH, Stage.HEIGHT));
@@ -111,7 +111,7 @@ public class Arkanoid extends Canvas implements Stage {
 		pelota.setY(Stage.HEIGHT-75);
 		objetos.add(nave);
 		nave.setX(Stage.WIDTH / 2 - 50);
-		nave.setY(420);
+		nave.setY(200);
 		pelota.setX(nave.getX());
 	    soundCache.loopSound("Valkirias.wav");
 
@@ -287,33 +287,13 @@ public class Arkanoid extends Canvas implements Stage {
 		Toolkit.getDefaultToolkit().sync();
 		Graphics2D g = (Graphics2D) strategy.getDrawGraphics();
 		fondo = spriteCache.getSprite("vietnam.jpg");
-		fondofinal= spriteCache.getSprite("final.jpg");
+		fondofinal= spriteCache.getSprite("rambo.jpeg");
 		g.setPaint(new TexturePaint(fondo, new Rectangle(0, t, fondo.getWidth(), fondo.getHeight())));
 		
 		if (pelota.vidas==0) {
-			millisactuales = System.currentTimeMillis();
-			segundos = millisactuales - millis;
 			g.setPaint(new TexturePaint(fondofinal, new Rectangle(0, t, fondofinal.getWidth(), fondofinal.getHeight())));
 			finvidas=true;
-			
-			if (finvidas==true && nuevaronda==true) {
-				millisactuales=0;
-				millisactuales = System.currentTimeMillis();
-				segundos = millisactuales - millis;
-			}
-			if (finvidas==true && nuevaronda==true && segundos>14000) {
-				
-				g.setPaint(new TexturePaint(fondofinal, new Rectangle(0, t, fondofinal.getWidth(), fondofinal.getHeight())));
-					JOptionPane.showMessageDialog(null,"Has muerto en acción, soldado");;
-					System.exit(0);
-				
-			}
-			if (finvidas==true && segundos>14000) {
-				g.setPaint(new TexturePaint(fondofinal, new Rectangle(0, t, fondofinal.getWidth(), fondofinal.getHeight())));
-				JOptionPane.showMessageDialog(null,"Has muerto en acción, soldado");;
-				System.exit(0);
-			}
-			
+			objetos.clear();
 		}
 		
 		g.fillRect(0, 0, getWidth(), getHeight());
@@ -356,7 +336,8 @@ public class Arkanoid extends Canvas implements Stage {
 			}
 			if (objetos.size()==54) {
 				nuevaronda=true;
-				JOptionPane.showMessageDialog(null,"¡A por esos malditos Charlies! ¡Bill!");
+				JOptionPane.showMessageDialog(null,"¡A por esos malditos Charlies! ¡vida extra Bill!");
+				pelota.vidas++;
 				initWorld2();
 				pelota.resetear();
 

@@ -1,4 +1,6 @@
-package tresenraya;
+package Programacion.tresenraya;
+
+
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -12,7 +14,7 @@ public class Celda {
 	private Ventana ventana = null;
 	private boolean moving = false;
 	public static final int LADO = 200;
-	public static final int PADDING = 10;
+	public static final int PADDING = 55;
 	
 	public Celda (int x, int y, Ventana ventana) {
 		this.x = x;
@@ -26,8 +28,8 @@ public class Celda {
 	 * @param g
 	 */
 	public void paint(Graphics g) {
-		g.setColor((this.moving)? Color.YELLOW : Color.WHITE);
-		g.fillRect(this.x, this.y, LADO, LADO);
+		//g.setColor((this.moving)? Color.YELLOW : Color.WHITE);
+		//g.fillRect(this.x, this.y, LADO, LADO);
 		
 		if (this.jugador != null) {
 			this.jugador.paint(g, this.x, this.y);

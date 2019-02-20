@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simpsons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="LosSimpsons.xsd">
+	<localidad valor="Springfield" anyoFundacion="1800"/>
+	<pelicula>Estreno el día 15-03-2012
+		<titulo>Los Simpsons la película</titulo>
+	</pelicula>
+	<creador bso="Danny Elfman">Matt Groening</creador>
+	<familia nombre="Simpsons">5</familia>
+	<temporada>
+		<temporada01/>
+		<!-- <temporada02/>
+		<temporada03/>-->
+	</temporada>
+	<personajes>
+		<Homer/>
+		<Marge/>
+		<Bart/>
+		<Lisa/>
+		<Maggie/>
+	</personajes>
+	<colorPersonajes principal="negro" rojo="120" verde="150" azul="170"/>
+	<MontgomeryBurns dni="12345678A" matricula="1234ABC" mac="12:e4:3f:56:ae:4a" color="amarillo"/>
+	<localidadRival>San_Francisco</localidadRival>
+	<localidadesAmigas>San_Francisco Madrid Las_Vegas</localidadesAmigas>
+	<Barney bebidaDiaria="ron" bebidaFavorita="vodka"/>
+	<Apu fechaNacimiento="10-02-1940">
+		<apodo>El del Badulake</apodo>
+	</Apu>
+	<Manyula fechaNacimiento="23-12-1948" nacionalidad="India">
+		<apodo>Madre de octillizos</apodo>
+		<DiosPreferido>Shiva</DiosPreferido>
+	</Manyula>
+	<Hugo>
+		<aficion>coser pájaros</aficion>
+		<ladoCicatriz>derecho</ladoCicatriz>
+		<edad>8</edad>
+		<aficion>correr</aficion>
+		<aficion>andar</aficion>
+		<aficion>pescar</aficion>
+	</Hugo>
+</simpsons>

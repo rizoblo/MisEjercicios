@@ -1,4 +1,4 @@
-package tresenraya;
+package Programacion.tresenraya;
 
 import java.awt.Graphics;
 

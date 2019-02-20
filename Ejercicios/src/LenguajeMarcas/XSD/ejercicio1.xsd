@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="Simpsons" type="tipoSimpsons"/>
+
+<!--  -->
+
+	<xs:complexType name="tipoSimpsons">
+	
+		<xs:sequence>
+		
+			<xs:element name="localidad" type="tipoLocalidad"/>
+			<xs:element name="pelicula" type="tipoPelicula"/>
+			<xs:element name="creador" type="tipoCreador"/>	
+			<xs:element name="familia" type="tipoFamilia"/>	
+			<xs:element name="temporada" type="tipoTemporada"/>	
+			<xs:element name="personajes" type="tipoPersonajes"/>	
+			<xs:element name="colorPersonajes" type="tipoColorPersonajes"/>
+		</xs:sequence>
+		
+	</xs:complexType>
+		
+<!--  -->
+
+	<xs:complexType name="tipoLocalidad">
+	
+		<xs:attribute name="valor" type="xs:string"></xs:attribute>
+		<xs:attribute name="anyofundacion" type="xs:string"></xs:attribute>
+		
+	</xs:complexType>
+
+<!--  -->
+	
+	<xs:complexType name="tipoPelicula" mixed="true">
+	
+		<xs:sequence>
+			<xs:element name="titulo" type="xs:string"></xs:element>
+		</xs:sequence>
+		
+	</xs:complexType>
+	
+<!--  -->
+			
+	<xs:complexType name="tipoCreador" mixed="true">
+	
+		<xs:attribute name="bso" type="xs:string"></xs:attribute>
+	
+	</xs:complexType>
+
+<!--  -->	
+	
+	<xs:complexType name="tipoFamilia">
+	
+		<xs:simpleContent>
+			<xs:extension base="xs:integer">
+				<xs:attribute name="nombre" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>	
+		
+	</xs:complexType>
+	
+<!--  -->	
+	
+	<xs:complexType name="tipoTemporada">
+	
+		<xs:choice>
+		
+			<xs:element name="temporada01" type="tipoVacio"></xs:element>
+			<xs:element name="temporada02" type="tipoVacio"></xs:element>
+			<xs:element name="temporada03" type="tipoVacio"></xs:element>
+			
+		</xs:choice>
+	
+	</xs:complexType>
+	
+<!--  -->
+	
+	<xs:complexType name="tipoPersonajes">
+	
+		<xs:all>
+		
+			<xs:element name="Homer" type="tipoVacio"></xs:element>
+			<xs:element name="Marge" type="tipoVacio"></xs:element>
+			<xs:element name="Bart" type="tipoVacio"></xs:element>
+			<xs:element name="Lisa" type="tipoVacio"></xs:element>
+			<xs:element name="Maggie" type="tipoVacio"></xs:element>
+			
+		</xs:all>
+		
+	</xs:complexType>
+	
+<!--  -->
+
+	<xs:complexType name="tipoVacio"/>
+	
+<!--  -->
+
+	<xs:complexType name="tipoColorPersonajes">
+	
+		<xs:attribute name="principal" type="xs:string"></xs:attribute>
+		<xs:attribute name="rojo" type="xs:integer"></xs:attribute>
+		<xs:attribute name="verde" type="xs:integer"></xs:attribute>
+		<xs:attribute name="azul" type="xs:integer"></xs:attribute>
+		
+	</xs:complexType>
+	
+<!--  -->
+
+	<xs:simpleType name="TipoColorLista">
+	
+		<xs:list itemType="listacolor"/>
+	
+	</xs:simpleType>
+	
+<!--  -->
+	
+	<xs:simpleType name="TipoColorLista">
+		
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="amarillo"></xs:enumeration>
+			<xs:enumeration value="carne"></xs:enumeration>
+		</xs:restriction>
+		
+	</xs:simpleType>
+	
+<!--  -->
+	
+	<xs:simpleType name="valorentre100y1000">
+		<xs:restriction>
+		
+		</xs:restriction>
+	
+	
+	</xs:simpleType>
+	
+	
+
+</xs:schema>

@@ -14,7 +14,7 @@ import java.awt.event.MouseEvent;
 		 
 		public Nave(Stage stage) {
 			super(stage);
-			setSpriteName (new String[] {"navecita.png"});
+			setSpriteName (new String[] {"copter.gif"});
 		}
 		
 		public void act() {

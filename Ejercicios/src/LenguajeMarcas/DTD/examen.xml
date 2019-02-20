@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE figuras SYSTEM "examen.dtd">
+
+<figura>
+
+	<colores>
+	
+		<color nombre="rojo"></color>
+		
+		
+		<color nombre="azul"></color>
+		
+	</colores>
+	
+	<rangosaltos>
+	
+		<general defensa="alta"></general>
+
+
+		<coronel nombre="inocencio" puntuacion="desastrosa" punteria="certera"></coronel>
+		
+ 
+		<comandante nombre="LordVader" puntuacion="generosamente desastrosa" ataque="elevado"></comandante>
+
+	</rangosaltos>
+	
+	<rangosmedios>
+	
+		<capitan>
+		
+			<plomo></plomo>
+		
+		</capitan>
+		
+
+		<alferez tipocolor="azul">&armamento;</alferez>
+	
+	</rangosmedios>
+	
+	<rangosbajos>
+	
+		<sargento tipocolor="rojo azul"></sargento>
+	
+		
+
+		<soldado nivelinutilidad="verducho"></soldado>
+
+	</rangosbajos>
+
+</figura>

@@ -1,6 +1,4 @@
-package tresenraya;
-
-
+package Programacion.tresenraya;
 
 public class Matriz {
 

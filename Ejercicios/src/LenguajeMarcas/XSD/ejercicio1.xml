@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Simpsons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ejercicio1.xsd">
+
+
+	<localidad valor="Springfield" anyofundacion="1800"/>
+	
+	<pelicula>Estreno 15-03-2012
+	
+		<titulo>Los Simpsons la pelicula</titulo>
+	
+	
+	</pelicula>
+
+	<creador bso="Danny Elfman">Matt Groening</creador>
+
+	<familia nombre="Simpsons">5</familia>
+	
+	<temporada>
+	
+		<temporada02/>
+		
+	
+	</temporada>
+
+	<personajes>
+	
+		<Homer/>
+		<Marge/>
+		<Bart/>
+		<Lisa/>
+		<Maggie/>
+	
+	</personajes>
+	
+	<colorPersonajes principal="amarillo" rojo="120" verde="150" azul="170">
+	
+	
+	
+	
+	</colorPersonajes>
+
+
+</Simpsons>
+
+
+

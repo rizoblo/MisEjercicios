@@ -11,7 +11,6 @@ public class Ladrillo extends Objetos {
 	public void collision(Objetos a) {
 		if (a instanceof Pelota) {
 			remove();
-			
 			stage.getSoundCache().playSound("petardo.wav");
 
 		}

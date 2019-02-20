@@ -80,7 +80,7 @@
 	</xs:simpleContent>
 	
 </xs:complexType>
-
+tipoejercicio11
 <!--  -->
 
 <xs:complexType name="tipoejercicio8">
@@ -108,7 +108,7 @@
 
 	<xs:attribute name="numeroruedas">
 	
-		<xs:simpleType>
+		<xs:simpleType>tipoejercicio11
 		
 			<xs:restriction base="xs:integer">
 			
@@ -135,7 +135,7 @@
 			
 				<xs:pattern value="[A-Z|a-z]{7}[0-9]{3}"/>
 				
-				
+				tipoejercicio11
 			</xs:restriction>
 			
 		</xs:simpleType>

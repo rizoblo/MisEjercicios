@@ -1,0 +1,43 @@
+
+
+<!ELEMENT figuras (figura)>
+
+<!ELEMENT figura (colores,rangosaltos,rangosmedios,rangosbajos)>
+
+<!ELEMENT colores (color)*>
+<!ELEMENT color ANY>
+
+<!ELEMENT rangosaltos (general+,coronel?,comandante*)>
+<!ELEMENT general (#PCDATA)>
+<!ELEMENT coronel (#PCDATA)>
+<!ELEMENT comandante EMPTY>
+
+<!ELEMENT rangosmedios (capitan,alferez)>
+<!ELEMENT capitan (#PCDATA | plomo | hierro)*>
+<!ELEMENT plomo (#PCDATA)>
+<!ELEMENT hierro (#PCDATA)>
+<!ELEMENT alferez ANY>
+
+<!ELEMENT rangosbajos (sargento,(cabo | soldado))>
+<!ELEMENT sargento ANY>
+<!ELEMENT cabo ANY>
+<!ELEMENT soldado ANY>
+
+<!ENTITY % parametro "nombre NMTOKEN #REQUIRED puntuacion NMTOKENS #REQUIRED">
+
+<!ATTLIST general defensa CDATA #FIXED "alta">
+<!ATTLIST coronel %parametro; punteria NMTOKEN #IMPLIED>
+<!ATTLIST comandante %parametro; ataque CDATA #REQUIRED>
+<!ATTLIST color nombre ID #IMPLIED>
+<!ATTLIST color nombre ID #IMPLIED>
+<!ATTLIST alferez tipocolor IDREF #REQUIRED>
+<!ATTLIST sargento tipocolor IDREFS #REQUIRED>
+<!ATTLIST soldado nivelinutilidad (raso| recluta | verducho) #REQUIRED>
+
+<!ENTITY armamento "fusil" >
+
+
+
+
+
+

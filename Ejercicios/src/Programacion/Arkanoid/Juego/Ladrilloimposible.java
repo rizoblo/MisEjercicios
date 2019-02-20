@@ -15,7 +15,7 @@ public class Ladrilloimposible extends Ladrillo {
 	public void collision(Objetos a) {
 		if (a instanceof Pelota) {
 			
-			stage.getSoundCache().playSound("petardo.wav");
+			stage.getSoundCache().playSound("Punches.wav");
 
 		}
 	}
