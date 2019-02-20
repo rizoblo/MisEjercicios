@@ -38,7 +38,6 @@ public class Arkanoid extends Canvas implements Stage {
 
 	private BufferStrategy strategy;
 	private long usedTime;
-
 	private SpriteCache spriteCache = new SpriteCache();
 	private List<Objetos> objetos = new ArrayList<Objetos>();
 	private Nave nave = new Nave(this);
@@ -54,6 +53,8 @@ public class Arkanoid extends Canvas implements Stage {
 	private List<Objetos> explosiones = new ArrayList<Objetos>();
 	private SoundCache soundCache=new SoundCache();
 	Pelota pelota = new Pelota(this);
+	Pildora pildora = new Pildora(this);
+	public int limitepildoras=0;
 	public Arkanoid() {
 
 		JFrame ventana = new JFrame("Arkanoid Vietnamita de Combate");
@@ -193,7 +194,9 @@ public class Arkanoid extends Canvas implements Stage {
 		
 		while (i<objetos.size()) {
 			Objetos m=(Objetos)objetos.get(i);
+				
 			if (m.isMarkedForRemoval()) {
+				
 				Explosion e = new Explosion(this);
 				e.setX(m.getX()+15);
 				e.setY(m.getY());
@@ -201,7 +204,24 @@ public class Arkanoid extends Canvas implements Stage {
 				objetos.remove(i);
 				
 			}
-
+			if (pildora.probabilidad>8 && limitepildoras<6) {
+				pildora.pildoraencuestion();
+			if (pildora.tipopildora==0) {
+				limitepildoras++;
+				Pildoratamanio pildoratamanio=new Pildoratamanio(this,0);
+				pildoratamanio.setX(m.getX()+25);
+				pildoratamanio.setY(m.getY());
+				objetos.add(pildoratamanio);
+			}
+			
+			if (pildora.tipopildora==1) {
+				limitepildoras++;
+				Pildoravelocidad pildoravelocidad=new Pildoravelocidad(this,0);
+				pildoravelocidad.setX(m.getX()+25);
+				pildoravelocidad.setY(m.getY());
+				objetos.add(pildoravelocidad);
+			}
+			}
 			{
 				m.act();
 				i++;

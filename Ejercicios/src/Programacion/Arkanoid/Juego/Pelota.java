@@ -205,6 +205,7 @@ public class Pelota extends Objetos {
 		if (a instanceof Nave) {
 			this.trayectoria.reflejarVerticalmenteRespectoAPunto(coordenadas);
 		}
+		
 	}
 
 	public void Mouseclicked(MouseEvent e) {
