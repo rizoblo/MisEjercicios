@@ -11,6 +11,7 @@ public class Ladrillo extends Objetos {
 	public void collision(Objetos a) {
 		if (a instanceof Pelota) {
 			remove();
+			Arkanoid.getInstancia().puntuacion+=100;
 			stage.getSoundCache().playSound("petardo.wav");
 
 		}

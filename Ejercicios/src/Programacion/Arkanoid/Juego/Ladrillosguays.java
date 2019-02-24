@@ -17,6 +17,7 @@ public class Ladrillosguays extends Ladrillo {
 			contadorvidaladrillo--;
 			if (contadorvidaladrillo==0) {
 			remove();
+			Arkanoid.getInstancia().puntuacion+=100;
 			}
 			stage.getSoundCache().playSound("bazooca.wav");
 

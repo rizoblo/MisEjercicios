@@ -45,6 +45,7 @@ public class Arkanoid extends Canvas implements Stage {
 	private BufferedImage fondo;
 	private BufferedImage fondofinal;
 	private int t;
+	public int puntuacion=0;
 	protected long millis = System.currentTimeMillis();
 	protected long millisactuales;
 	protected long segundos;
@@ -339,8 +340,10 @@ public class Arkanoid extends Canvas implements Stage {
 			Objetos m = (Objetos) pildoras.get(i);
 			m.paint(g);
 		}
-		g.setColor(Color.blue);
+		g.setColor(Color.white);
 		g.drawString("Vidas actuales: "+pelota.vidas, 520, 445);
+		g.setColor(Color.white);
+		g.drawString("Puntaje: "+puntuacion, 520, 430);
 		if (usedTime > 0)
 			g.drawString(String.valueOf(1000 / usedTime) + " fps", 0, Stage.HEIGHT - 50);
 		
@@ -369,7 +372,7 @@ public class Arkanoid extends Canvas implements Stage {
 			}
 			if (objetos.size()==2) {
 				nuevaronda=true;
-				JOptionPane.showMessageDialog(null,"¡A por esos malditos Charlies! ¡vida extra Bill!");
+				JOptionPane.showMessageDialog(null,"�A por esos malditos Charlies!");
 				initWorld2();
 				pelota.resetear();
 
