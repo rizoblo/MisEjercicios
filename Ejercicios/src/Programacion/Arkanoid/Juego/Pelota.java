@@ -29,7 +29,7 @@ public class Pelota extends Objetos {
 
 	public Pelota(Stage stage) {
 		super(stage);
-		setSpriteName(new String[] { "granada.png" });
+		setSpriteName(new String[] { "brazuca.png" });
 	}
 
 	public void act() {
@@ -205,7 +205,6 @@ public class Pelota extends Objetos {
 		if (a instanceof Nave) {
 			this.trayectoria.reflejarVerticalmenteRespectoAPunto(coordenadas);
 		}
-		
 	}
 
 	public void Mouseclicked(MouseEvent e) {

@@ -38,6 +38,7 @@ public class Arkanoid extends Canvas implements Stage {
 
 	private BufferStrategy strategy;
 	private long usedTime;
+	private static Arkanoid instancia = null;
 	private SpriteCache spriteCache = new SpriteCache();
 	private List<Objetos> objetos = new ArrayList<Objetos>();
 	private Nave nave = new Nave(this);
@@ -51,13 +52,12 @@ public class Arkanoid extends Canvas implements Stage {
 	public boolean nuevaronda=false;
 	Raton raton=new Raton();
 	private List<Objetos> explosiones = new ArrayList<Objetos>();
+	private List<Objetos> pildoras = new ArrayList<Objetos>();
 	private SoundCache soundCache=new SoundCache();
 	Pelota pelota = new Pelota(this);
-	Pildora pildora = new Pildora(this);
-	public int limitepildoras=0;
 	public Arkanoid() {
 
-		JFrame ventana = new JFrame("Arkanoid Vietnamita de Combate");
+		JFrame ventana = new JFrame("Invaders");
 		JPanel panel = (JPanel) ventana.getContentPane();
 		setBounds(0, 0, Stage.WIDTH, Stage.HEIGHT);
 		panel.setPreferredSize(new Dimension(Stage.WIDTH, Stage.HEIGHT));
@@ -112,7 +112,7 @@ public class Arkanoid extends Canvas implements Stage {
 		pelota.setY(Stage.HEIGHT-75);
 		objetos.add(nave);
 		nave.setX(Stage.WIDTH / 2 - 50);
-		nave.setY(200);
+		nave.setY(420);
 		pelota.setX(nave.getX());
 	    soundCache.loopSound("Valkirias.wav");
 
@@ -194,33 +194,18 @@ public class Arkanoid extends Canvas implements Stage {
 		
 		while (i<objetos.size()) {
 			Objetos m=(Objetos)objetos.get(i);
-				
-			if (m.isMarkedForRemoval()) {
-				
+			if (m.isMarkedForRemoval() && m instanceof Ladrillo) {
 				Explosion e = new Explosion(this);
 				e.setX(m.getX()+15);
 				e.setY(m.getY());
 				explosiones.add(e);
+				creadorpildoras(m);
 				objetos.remove(i);
 				
 			}
-			if (pildora.probabilidad>8 && limitepildoras<6) {
-				pildora.pildoraencuestion();
-			if (pildora.tipopildora==0) {
-				limitepildoras++;
-				Pildoratamanio pildoratamanio=new Pildoratamanio(this,0);
-				pildoratamanio.setX(m.getX()+25);
-				pildoratamanio.setY(m.getY());
-				objetos.add(pildoratamanio);
-			}
 			
-			if (pildora.tipopildora==1) {
-				limitepildoras++;
-				Pildoravelocidad pildoravelocidad=new Pildoravelocidad(this,0);
-				pildoravelocidad.setX(m.getX()+25);
-				pildoravelocidad.setY(m.getY());
-				objetos.add(pildoravelocidad);
-			}
+			if (m instanceof Pildora && m.isMarkedForRemoval()) {
+				objetos.remove(i);
 			}
 			{
 				m.act();
@@ -241,6 +226,8 @@ public class Arkanoid extends Canvas implements Stage {
 			Objetos m = (Objetos) explosiones.get(i);
 			m.act();
 		}
+		
+		
 		if((nave.left==true || nave.right==true) && (pelota.espacio==0 && pelota.contador==0) && (pelota.segundos<5000) || (pelota.finronda==true)) {
 			pelota.setX(nave.getX()+8);
 			pelota.setY(nave.getY()-15);
@@ -248,6 +235,29 @@ public class Arkanoid extends Canvas implements Stage {
 			
 		
 		}
+	}
+
+	private void creadorpildoras(Objetos m) {
+		int tipopildora=(int)Math.round(Math.random()*10);
+		int probabilidadpildora=(int)Math.round(Math.random()*10);
+		if (probabilidadpildora>5){
+			if(tipopildora>6) {
+				Pildora p=new Pildoravelocidad(this,m.getX()+25,m.getY());
+				objetos.add(p);
+				return;
+			}
+			if(tipopildora>3) {
+				Pildora p=new Pildoravida(this,m.getX()+25,m.getY());
+				objetos.add(p);
+				return;
+			}
+			if(tipopildora>0) {
+				Pildora p=new Pildorapeligrosa(this,m.getX()+25,m.getY());
+				objetos.add(p);
+				return;
+			}
+		}
+			
 	}
 
 	public void checkCollisions() {
@@ -307,7 +317,7 @@ public class Arkanoid extends Canvas implements Stage {
 		Toolkit.getDefaultToolkit().sync();
 		Graphics2D g = (Graphics2D) strategy.getDrawGraphics();
 		fondo = spriteCache.getSprite("vietnam.jpg");
-		fondofinal= spriteCache.getSprite("rambo.jpeg");
+		fondofinal= spriteCache.getSprite("final.jpg");
 		g.setPaint(new TexturePaint(fondo, new Rectangle(0, t, fondo.getWidth(), fondo.getHeight())));
 		
 		if (pelota.vidas==0) {
@@ -325,7 +335,10 @@ public class Arkanoid extends Canvas implements Stage {
 			Objetos m = (Objetos) explosiones.get(i);
 			m.paint(g);
 		}
-
+		for (int i=0; i<pildoras.size();i++) {
+			Objetos m = (Objetos) pildoras.get(i);
+			m.paint(g);
+		}
 		g.setColor(Color.blue);
 		g.drawString("Vidas actuales: "+pelota.vidas, 520, 445);
 		if (usedTime > 0)
@@ -354,10 +367,9 @@ public class Arkanoid extends Canvas implements Stage {
 				Thread.sleep(SPEED);
 			} catch (InterruptedException e) {
 			}
-			if (objetos.size()==54) {
+			if (objetos.size()==2) {
 				nuevaronda=true;
 				JOptionPane.showMessageDialog(null,"¡A por esos malditos Charlies! ¡vida extra Bill!");
-				pelota.vidas++;
 				initWorld2();
 				pelota.resetear();
 
@@ -366,16 +378,30 @@ public class Arkanoid extends Canvas implements Stage {
 	}
 	
 
+	public synchronized static Arkanoid getInstancia() {
+        if (instancia == null) {
+            instancia = new Arkanoid();
+        }
+        return instancia;
+    }
 
 	public static void main(String[] args) {
-		Arkanoid inv = new Arkanoid();
-		inv.game();
+		
+		Arkanoid.getInstancia().game();
 	}
 
 	public SoundCache getSoundCache() {
 		return soundCache;
 	}
 
+	public Pelota getPelota() {
+		return pelota;
+	}
+
+	public void setPelota(Pelota pelota) {
+		this.pelota = pelota;
+	}
+	
 	
 	
 }

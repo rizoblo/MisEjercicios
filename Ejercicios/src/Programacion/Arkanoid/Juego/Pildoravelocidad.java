@@ -2,18 +2,19 @@ package Programacion.Arkanoid.Juego;
 
 public class Pildoravelocidad extends Pildora {
 
-	public boolean colision=false;
-	protected String nombre[]=new String [] {""};
-	public Pildoravelocidad(Stage stage, int pildora) {
+	public Pildoravelocidad(Stage stage, int x, int y) {
 		super(stage);
-		String name[]=new String[] {""};
-		setSpriteName(name);
+		this.x=x;
+		this.y=y;
+		setSpriteName(new String[] {"speed.png"});
 	}
-
-	public void collision(Objetos a ) {
+	public void collision(Objetos a) {
 		if (a instanceof Nave) {
-			remove();
-			colision=true;
+			colisionado=true;
+			Arkanoid.getInstancia().getPelota().pixelsPorFrame+=Arkanoid.getInstancia().getPelota().pixelsPorFrame/5;
+			stage.getSoundCache().playSound("Punches.wav");
+			
 		}
 	}
+
 }
