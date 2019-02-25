@@ -241,7 +241,7 @@ public class Arkanoid extends Canvas implements Stage {
 	private void creadorpildoras(Objetos m) {
 		int tipopildora=(int)Math.round(Math.random()*10);
 		int probabilidadpildora=(int)Math.round(Math.random()*10);
-		if (probabilidadpildora>5){
+		if (probabilidadpildora>0){
 			if(tipopildora>6) {
 				Pildora p=new Pildoravelocidad(this,m.getX()+25,m.getY());
 				objetos.add(p);
@@ -372,7 +372,7 @@ public class Arkanoid extends Canvas implements Stage {
 			}
 			if (objetos.size()==2) {
 				nuevaronda=true;
-				JOptionPane.showMessageDialog(null,"¡A por esos malditos Charlies!");
+				JOptionPane.showMessageDialog(null,"ï¿½A por esos malditos Charlies!");
 				initWorld2();
 				pelota.resetear();
 
