@@ -1,0 +1,17 @@
+package RepasoExamenListas;
+
+public class Ataqueespecial extends Ataque {
+
+	public Ataqueespecial() {
+		super();
+		this.setDaño(20);
+	}
+
+	private static Ataqueespecial instancia = null;
+	public synchronized static Ataqueespecial getInstancia() {
+        if (instancia == null) {
+            instancia = new Ataqueespecial();
+        }
+        return instancia;
+    }
+}
