@@ -4,7 +4,7 @@ public class Punietazo extends Ataque {
 
 	public Punietazo() {
 		super();
-		this.setDaño(5);
+		this.setDanio(5);
 	}
 
 	private static Punietazo instancia = null;

@@ -4,7 +4,7 @@ public class Ataqueespecial extends Ataque {
 
 	public Ataqueespecial() {
 		super();
-		this.setDaño(20);
+		this.setDanio(20);
 	}
 
 	private static Ataqueespecial instancia = null;

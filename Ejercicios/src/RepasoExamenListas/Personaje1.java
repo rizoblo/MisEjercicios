@@ -48,7 +48,7 @@ public class Personaje1 extends Personaje {
 				if (probabilidad<75) {
 					System.out.println(this.getNombre()+" ha dado una patada a "+Personaje2.getInstancia().getNombre());
 					System.out.println("la vida del pegado antes es: "+Personaje2.getInstancia().getVida());
-					Personaje2.getInstancia().setVida(Personaje2.getInstancia().getVida()-Patada.getInstancia().getDaño());
+					Personaje2.getInstancia().setVida(Personaje2.getInstancia().getVida()-Patada.getInstancia().getDanio());
 					System.out.println("la vida del pegado despues es: "+Personaje2.getInstancia().getVida() );
 				}
 				else
@@ -65,7 +65,7 @@ public class Personaje1 extends Personaje {
 				if (probabilidad<75) {
 				System.out.println(this.getNombre()+" ha dado una punietazo a "+Personaje2.getInstancia().getNombre());
 				System.out.println("la vida del pegado antes es: "+Personaje2.getInstancia().getVida() );
-				Personaje2.getInstancia().setVida(Personaje2.getInstancia().getVida()-Punietazo.getInstancia().getDaño());
+				Personaje2.getInstancia().setVida(Personaje2.getInstancia().getVida()-Punietazo.getInstancia().getDanio());
 				System.out.println("la vida del pegado despues es: "+Personaje2.getInstancia().getVida() );
 				}
 				else
@@ -81,7 +81,7 @@ public class Personaje1 extends Personaje {
 				if (probabilidad<75) {
 				System.out.println(this.getNombre()+" ha dado una ataqueespecial a "+Personaje2.getInstancia().getNombre());
 				System.out.println("la vida del pegado antes es: "+Personaje2.getInstancia().getVida() );
-				Personaje2.getInstancia().setVida(Personaje2.getInstancia().getVida()-Ataqueespecial.getInstancia().getDaño());
+				Personaje2.getInstancia().setVida(Personaje2.getInstancia().getVida()-Ataqueespecial.getInstancia().getDanio());
 				System.out.println("la vida del pegado despues es: "+Personaje2.getInstancia().getVida() );
 				}
 				else

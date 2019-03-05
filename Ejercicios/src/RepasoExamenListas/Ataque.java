@@ -7,19 +7,19 @@ public class Ataque {
 	}
 
 	private static Ataque instancia = null;
-	private int daño=0;
+	private int danio=0;
 
-	public Ataque(int daño) {
+	public Ataque(int danio) {
 		super();
-		this.daño = daño;
+		this.danio = danio;
 	}
 
-	public int getDaño() {
-		return daño;
+	public int getDanio() {
+		return danio;
 	}
 
-	public void setDaño(int daño) {
-		this.daño = daño;
+	public void setDanio(int danio) {
+		this.danio = danio;
 	}
 	
 	public synchronized static Ataque getInstancia() {
