@@ -1,4 +1,4 @@
-package RepasoExamenListas;
+package RepasoExamenListas.Juegosimulacro;
 
 
 public abstract class Personaje {

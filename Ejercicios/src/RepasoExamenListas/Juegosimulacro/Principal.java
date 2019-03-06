@@ -1,4 +1,4 @@
-package RepasoExamenListas;
+package RepasoExamenListas.Juegosimulacro;
 
 import javax.swing.JOptionPane;
 

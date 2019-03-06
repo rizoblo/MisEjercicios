@@ -4,6 +4,9 @@ import javax.swing.JOptionPane;
 
 public class Capt06Bloque4Ej1 {
 
+	/*1º.- Implementa un programa que contenga una clase llamada "PeticionNumeros", con un método "pideNumeroPar()". 
+	 * Desde un método "main()" llama al método anterior. Dentro del método "pideNumeroPar()" debes crear todo lo necesario 
+	 * para disparar una Exception, creada por ti, cuando el número introducido no sea un número par.*/
 	static int numerousuario=0;
 	public static void main(String[] args) {
 		

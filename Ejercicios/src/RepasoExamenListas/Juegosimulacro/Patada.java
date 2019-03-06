@@ -1,4 +1,4 @@
-package RepasoExamenListas;
+package RepasoExamenListas.Juegosimulacro;
 
 public class Patada extends Ataque {
 
