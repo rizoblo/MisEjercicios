@@ -1,4 +1,4 @@
-package RepasoExamenListas;
+package RepasoExamenListas.Listas;
 
 import java.util.ArrayList;
 import java.util.List;
