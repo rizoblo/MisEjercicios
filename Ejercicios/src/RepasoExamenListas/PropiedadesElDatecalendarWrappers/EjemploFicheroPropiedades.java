@@ -1,4 +1,4 @@
-package RepasoExamenListas.PropiedadesElDatecalendar;
+package RepasoExamenListas.PropiedadesElDatecalendarWrappers;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -22,7 +22,7 @@ public class EjemploFicheroPropiedades {
 			propiedades = new Properties();
 		    
 			try {
-				propiedades.load(propiedades.getClass().getResourceAsStream("/RepasoExamenListas/PropiedadesElDatecalendar/ejemplo.properties"));
+				propiedades.load(propiedades.getClass().getResourceAsStream("/RepasoExamenListas/PropiedadesElDatecalendarWrappers/ejemplo.properties"));
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -73,8 +73,8 @@ public class EjemploFicheroPropiedades {
 		String password = EjemploFicheroPropiedades.getProperty("PASSWORD");
 		int id = EjemploFicheroPropiedades.getIntProperty("ID_USUARIO");
 		
-		System.out.println("Usuario leído del fichero de propiedades: " + usuario);
-		System.out.println("Password leído del fichero de propiedades: " + password);
-		System.out.println("Id de usuario leído del fichero de propiedades: " + id);
+		System.out.println("Usuario leï¿½do del fichero de propiedades: " + usuario);
+		System.out.println("Password leï¿½do del fichero de propiedades: " + password);
+		System.out.println("Id de usuario leï¿½do del fichero de propiedades: " + id);
 	}
 }
