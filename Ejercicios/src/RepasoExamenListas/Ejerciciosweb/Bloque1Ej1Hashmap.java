@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 	 *  Además el usuario podrá consultar la localización de un determinado artículo por su código de barras. 
 	 * Sólo existirá como mucho una unidad de cada tipo de artículo.*/
 
-public class Bloque1Ej1 {
+public class Bloque1Ej1Hashmap {
 
 	public static String texto="Elija opcion \n"
 			+ "1.Añadir articulo \n"
