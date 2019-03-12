@@ -10,7 +10,7 @@ public class Personaje1 extends Personaje {
 	public Personaje1() {
 		super();
 		this.setCod(1);
-		this.setNombre("Farruco");
+		this.setNombre(propiedadesjuego.getProperty("jugador1"));
 		this.setVida(100);
 	}
 

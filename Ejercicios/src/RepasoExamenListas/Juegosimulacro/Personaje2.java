@@ -9,7 +9,7 @@ public class Personaje2 extends Personaje {
 	public Personaje2() {
 		super();
 		this.setCod(2);
-		this.setNombre("Caves");
+		this.setNombre(propiedadesjuego.getProperty("jugador2"));
 		this.setVida(100);
 	}
 
