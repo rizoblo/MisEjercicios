@@ -28,6 +28,7 @@ public class Bloque5Ej1Datecalendar {
 		fechaparseadasdf();
 		dateacalendar();
 		camposdelcalendar();
+		camposdeldate();
 		sumafechas();
 	}
 	public static Date fechaparseada=null;
@@ -60,6 +61,13 @@ public class Bloque5Ej1Datecalendar {
 		System.out.println("Hora en formato 24H: " + fechaCalendar.get(Calendar.HOUR_OF_DAY));
 		System.out.println("Minutos: " + fechaCalendar.get(Calendar.MINUTE));
 		System.out.println("Segundos: " + fechaCalendar.get(Calendar.SECOND));
+	}
+	
+	public static void camposdeldate() {
+		// Conversi�n a date y formateo
+		Date fechaparseada = new Date(fechaCalendar.getTimeInMillis());
+		System.out.println("Fecha a partir de date con campos individualizados: " + 
+		new SimpleDateFormat ("dd/MM/yyyy HH:mm:ss").format(fechaparseada));
 	}
 	
 	public static void sumafechas() {
