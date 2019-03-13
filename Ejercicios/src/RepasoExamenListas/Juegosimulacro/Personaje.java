@@ -1,7 +1,8 @@
 package RepasoExamenListas.Juegosimulacro;
 
+//tenemos q extender en el objeto el adapter creado
 
-public abstract class Personaje {
+public abstract class Personaje extends PatadaAdapter {
 
 	
 	

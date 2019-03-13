@@ -1,9 +1,17 @@
 package RepasoExamenListas.Juegosimulacro;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
+
+
+
+
 
 public class Principal {
 
+	static List<PatadaListener> patadasintroducidasListeners = new ArrayList<PatadaListener>(); //lista de listeners
 	public static void main(String[] args) {
 		
 
@@ -15,6 +23,22 @@ public class Principal {
 		
 	}
 
+	public static void addPatadaListener (PatadaListener listener) { //add para el listener
+		patadasintroducidasListeners.add(listener);
+	}
+	public static void removePatadaListener (PatadaListener listener) { //remove para el listener
+		patadasintroducidasListeners.remove(listener);
+	}
+	public static void firePatadaEventJ1(PatadaEvent event) {
+		for (PatadaListener listener : patadasintroducidasListeners) {
+			listener.patadaIntroducidaJ1(event); //el metodo del listener que queramos llamar
+		}
+	}
+	public static void firePatadaEventJ2(PatadaEvent event) {
+		for (PatadaListener listener : patadasintroducidasListeners) {
+			listener.patadaIntroducidaJ2(event); //el metodo del listener que queramos llamar
+		}
+	}
 	static public void game() {
 		do {
 			JOptionPane.showMessageDialog(null, "Cambia turno");

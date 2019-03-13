@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+	
 public class Personaje1 extends Personaje {
 
 	private static Personaje1 instancia = null;
@@ -12,6 +13,7 @@ public class Personaje1 extends Personaje {
 		this.setCod(1);
 		this.setNombre(propiedadesjuego.getProperty("jugador1"));
 		this.setVida(100);
+		Principal.addPatadaListener(this); //hay que aniadir este listener a la lista
 	}
 
 	private int cantidadataques=0;
@@ -20,6 +22,10 @@ public class Personaje1 extends Personaje {
 
 	public List<Ataque> ListagolpesPersonaje1= new ArrayList<Ataque>();
 	
+	//aqui creamos un metodo como el que tenemos en el adapter y ponemos la notificacion
+	public void patadaIntroducidaJ1(PatadaEvent event) {
+		System.out.println("El jugador "+Personaje1.getInstancia().getNombre()+" ha intentado dar una patada");
+	}
 	@Override
 	public void act() {
 		cantidadataques=(int)Math.round(Math.random()*2+1);	
@@ -55,8 +61,8 @@ public class Personaje1 extends Personaje {
 				{
 					System.out.println("El ataque fallo");
 				}
-				
-				
+				PatadaEvent event= new PatadaEvent(); //aqui creamos el evento
+				Principal.firePatadaEventJ1(event); //para que coja este evento es necesario crearlo, como ves arriba
 			}
 			if ( ListagolpesPersonaje1.get(i) instanceof Punietazo) {
 				System.out.println("El turno es de: "+Personaje1.getInstancia().getNombre());
@@ -100,6 +106,10 @@ public class Personaje1 extends Personaje {
         }
         return instancia;
     }
+
+	
+
+	
 
 	
 	

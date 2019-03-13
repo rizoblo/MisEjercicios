@@ -3,7 +3,8 @@ package RepasoExamenListas.Juegosimulacro;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Personaje2 extends Personaje {
+//el objeto debe implementar listener
+public class Personaje2 extends Personaje implements PatadaListener{
 
 	private static Personaje2 instancia = null;
 	public Personaje2() {
@@ -11,6 +12,7 @@ public class Personaje2 extends Personaje {
 		this.setCod(2);
 		this.setNombre(propiedadesjuego.getProperty("jugador2"));
 		this.setVida(100);
+		Principal.addPatadaListener(this); //hay que aniadir este listener a la lista
 	}
 
 	private int cantidadataques=0;
@@ -18,6 +20,11 @@ public class Personaje2 extends Personaje {
 	private int probabilidad=0;
 	
 	public List<Ataque> ListagolpesPersonaje2= new ArrayList<Ataque>();
+	
+	//aqui creamos un metodo como el que tenemos en el adapter y ponemos la notificacion
+		public void patadaIntroducidaJ2(PatadaEvent event) {
+			System.out.println("El jugador "+Personaje2.getInstancia().getNombre()+" ha intentado dar una patada");
+		}
 	@Override
 	public void act() {
 		cantidadataques=(int)Math.round(Math.random()*2+1);	
@@ -53,6 +60,8 @@ public class Personaje2 extends Personaje {
 				{
 					System.out.println("El ataque fallo");
 				}
+				PatadaEvent event= new PatadaEvent(); //aqui creamos el evento
+				Principal.firePatadaEventJ2(event); //para que coja este evento es necesario crearlo, como ves arriba
 			}
 			if ( ListagolpesPersonaje2.get(i) instanceof Punietazo) {
 				System.out.println("El turno es de: "+this.getNombre());

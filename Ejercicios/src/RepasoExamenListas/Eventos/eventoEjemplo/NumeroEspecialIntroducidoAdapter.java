@@ -1,6 +1,6 @@
 package RepasoExamenListas.Eventos.eventoEjemplo;
 
-public class NumeroEspecialIntroducidoAdapter implements NumeroEspecialIntroducidoListener {
+public class PatadaAdapter implements PatadaListener {
 
 	@Override
 	public void numeroImparIntroducido(NumeroEspecialIntroducidoEvent event) {
