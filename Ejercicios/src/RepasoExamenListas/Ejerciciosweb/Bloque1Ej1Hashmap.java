@@ -28,7 +28,7 @@ public class Bloque1Ej1Hashmap {
 	public static String lista;
 	public static String respuestaupdate;
 	
-	
+	//para coger un objeto del hashmap ponemos hm.get(key)
 	public static HashMap<String, Articulo> hm = new HashMap<String, Articulo>();
 	public static void main(String[] args) {
 		ejercicio();
