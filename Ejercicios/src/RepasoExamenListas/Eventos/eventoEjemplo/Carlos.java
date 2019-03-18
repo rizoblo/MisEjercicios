@@ -10,14 +10,14 @@ public class Carlos extends NumeroEspecialIntroducidoAdapter {
 	
 	@Override
 	public void numeroImparIntroducido(NumeroEspecialIntroducidoEvent event) {
-		System.out.println("Soy Carlos, han introducido un número impar: " + event.getNumeroIntroducido());
+		System.out.println("Soy Carlos, han introducido un nï¿½mero impar: " + event.getNumeroIntroducido());
 	}
 
 
 	@Override
 	public void numeroPrimoIntroducido(NumeroEspecialIntroducidoEvent event) {
 		super.numeroPrimoIntroducido(event);
-		System.out.println("Soy Carlos, han introducido un número primo: " + event.getNumeroIntroducido());
+		System.out.println("Soy Carlos, han introducido un nï¿½mero primo: " + event.getNumeroIntroducido());
 	}
 	
 	

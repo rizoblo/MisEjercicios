@@ -4,7 +4,7 @@ public class Fran  extends NumeroEspecialIntroducidoAdapter  {
 
 	@Override
 	public void numeroImparIntroducido(NumeroEspecialIntroducidoEvent event) {
-		System.out.println("Soy Fran, han introducido un número impar: " + event.getNumeroIntroducido());
+		System.out.println("Soy Fran, han introducido un nï¿½mero impar: " + event.getNumeroIntroducido());
 	}
 
 }

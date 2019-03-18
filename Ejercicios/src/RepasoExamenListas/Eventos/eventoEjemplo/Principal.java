@@ -59,8 +59,8 @@ public class Principal {
 		
 		
 		while (true) {
-			int numIntroducido =  Integer.parseInt(JOptionPane.showInputDialog("Introduzca número: "));
-			System.out.println("Número introducido: " + numIntroducido);
+			int numIntroducido =  Integer.parseInt(JOptionPane.showInputDialog("Introduzca nï¿½mero: "));
+			System.out.println("Nï¿½mero introducido: " + numIntroducido);
 			
 			// Notifico a los listeners
 			if (numIntroducido % 2 == 1) {
@@ -68,7 +68,7 @@ public class Principal {
 				fireNumeroImparIntroducidoListener(event);
 			}
 			
-			// Notifico número primo
+			// Notifico nï¿½mero primo
 			boolean esPrimo =true;
 			for (int i = 2; i == numIntroducido - 1; i++) {
 				if (numIntroducido % i == 0) {
