@@ -6,7 +6,6 @@ import com.mysql.jdbc.Connection;
 
 import oracle.ucp.jdbc.PoolDataSource;
 import oracle.ucp.jdbc.PoolDataSourceFactory;
-
     
 public class ConnectionManagerV2 {
 
