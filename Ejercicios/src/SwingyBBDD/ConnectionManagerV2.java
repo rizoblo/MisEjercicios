@@ -1,4 +1,4 @@
-package Swing;
+package SwingyBBDD;
 
 import java.sql.SQLException;
 
