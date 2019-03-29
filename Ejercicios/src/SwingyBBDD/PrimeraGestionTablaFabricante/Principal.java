@@ -1,4 +1,4 @@
-package SwingyBBDD;
+package SwingyBBDD.PrimeraGestionTablaFabricante;
 
 
 public class Principal {

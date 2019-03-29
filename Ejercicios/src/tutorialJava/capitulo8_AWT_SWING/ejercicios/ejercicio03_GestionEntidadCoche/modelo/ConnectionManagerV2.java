@@ -1,4 +1,4 @@
-package SwingyBBDD;
+package tutorialJava.capitulo8_AWT_SWING.ejercicios.ejercicio03_GestionEntidadCoche.modelo;
 
 import java.sql.SQLException;
 
@@ -6,7 +6,6 @@ import com.mysql.jdbc.Connection;
 
 import oracle.ucp.jdbc.PoolDataSource;
 import oracle.ucp.jdbc.PoolDataSourceFactory;
-
 
     
 public class ConnectionManagerV2 {

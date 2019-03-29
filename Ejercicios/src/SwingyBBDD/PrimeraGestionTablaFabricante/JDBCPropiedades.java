@@ -1,4 +1,4 @@
-package SwingyBBDD;
+package SwingyBBDD.PrimeraGestionTablaFabricante;
 
 import java.io.File;
 import java.io.FileInputStream;

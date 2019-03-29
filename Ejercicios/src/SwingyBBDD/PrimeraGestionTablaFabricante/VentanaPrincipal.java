@@ -1,4 +1,4 @@
-package SwingyBBDD;
+package SwingyBBDD.PrimeraGestionTablaFabricante;
 
 import java.awt.Color;
 
@@ -128,9 +128,9 @@ public class VentanaPrincipal extends JFrame {
 		try {
 			Connection conn=ConnectionManagerV2.getConexion();
 			PreparedStatement ps = conn.prepareStatement("UPDATE tutorialjavacoches.fabricante set cif=?,nombre=? where id=?");
-			ps.setInt(1, Integer.parseInt(tfid.getText()));
-			ps.setString(2, tfcif.getText());
-			ps.setString(3, tfnombre.getText());
+			ps.setInt(3, Integer.parseInt(tfid.getText()));
+			ps.setString(1, tfcif.getText());
+			ps.setString(2, tfnombre.getText());
 			
 			
 			int filasAfectadas=ps.executeUpdate();

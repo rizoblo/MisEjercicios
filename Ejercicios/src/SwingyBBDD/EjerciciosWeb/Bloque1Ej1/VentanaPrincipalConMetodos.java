@@ -89,7 +89,7 @@ public class VentanaPrincipalConMetodos extends JFrame {
 		String arraycombo []= new String []{"Madrid","Barcelona"};
 		JComboBox jcb = new JComboBox(arraycombo);
 		jcb.addActionListener(new ActionListener() {
-			
+		
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, jcb.getSelectedItem());
